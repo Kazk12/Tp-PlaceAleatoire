@@ -1,7 +1,7 @@
 const ajoutez = document.querySelector('#ajoute');
 const terminer = document.querySelector('#termine');
-ajoutez.addEventListener('click', Handleajoutez);
-terminer.addEventListener('click', Handleterminer);
+ajoutez.addEventListener('click', handleAjoutez);
+terminer.addEventListener('click', handleTerminer);
 
 function Handleajoutez(){
 const name = document.querySelector('#name')
@@ -10,16 +10,18 @@ apprenants.push(name.value)
 name.value = "";
 
 console.log(apprenants)
+}
+
 const apprenants = [];
 
-function Handleajoutez() {
+function handleAjoutez() {
     const name = document.querySelector('#name');
     apprenants.push(name.value);
     name.value = "";  // Effacer le champ de saisie après ajout
     console.log(apprenants);
 }
 
-function Handleterminer() {
+function handleTerminer() {
     const formulaire = document.querySelector('#form');
     formulaire.classList.add("none");
 
@@ -50,5 +52,4 @@ function Handleterminer() {
             </div>
         </div>`;
     }
-}
 }
