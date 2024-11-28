@@ -3,8 +3,10 @@
 .flex{
     display: flex;
     justify-content: center;
+    align-items: center;
     padding-top: 20px;
 }
+<<<<<<< HEAD
 
 *{
     margin: 0;
@@ -95,3 +97,11 @@
 
 
 >>>>>>> formulaire
+=======
+.colonne {
+    flex-direction: column;
+}
+.btn{
+    border: 3px solid red;
+}
+>>>>>>> PresentationRapide
