@@ -3,15 +3,6 @@ const terminer = document.querySelector('#termine');
 ajoutez.addEventListener('click', handleAjoutez);
 terminer.addEventListener('click', handleTerminer);
 
-function Handleajoutez(){
-const name = document.querySelector('#name')
-// console.log(name.value)
-apprenants.push(name.value)
-name.value = "";
-
-console.log(apprenants)
-}
-
 const apprenants = [];
 
 function handleAjoutez() {
@@ -48,7 +39,7 @@ function handleTerminer() {
             <h2>Liste des Apprenants :</h2>
             ${contenuHTML}
             <div class="flex">
-                <a href="#" class="btn modifier">Modifier</a>
+                <a href="#" id="Prime" class="btn modifier">Modifier</a>
                 <a href="#" id="Finito" class="btn terminer-btn">Terminer</a>
             </div>
         </div>
@@ -57,6 +48,8 @@ function handleTerminer() {
          // Maintenant que l'élément #Finito existe, on peut ajouter l'écouteur d'événement
          const TerminerListe = document.querySelector("#Finito"); 
          TerminerListe.addEventListener("click", handleClickHideListe);
+         const ModifyListe = document.querySelector("#Prime");
+         ModifyListe.addEventListener("click", handleClickHideListeShowList)
 
 
     }
@@ -66,4 +59,15 @@ function handleClickHideListe() {
     if (Listes) {
         Listes.classList.add("none");
     } 
+}
+
+function handleClickHideListeShowList(){
+    const Listes = document.querySelector("Listes");
+    const formulaire = document.querySelector('#form');
+
+    if(Listes){
+        Listes.classList.add("none")
+    }
+    formulaire.classList.remove("none");
+
 }
