@@ -107,3 +107,94 @@
     border: 3px solid red;
 }
 
+/* Style pour la liste des apprenants */
+.apprenant {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.apprenant:hover {
+    background-color: #f0f8ff;
+}
+
+/* Classes spécifiques à la liste */
+.cinq {
+    font-size: 18px;
+    color: #333;
+    flex: 1;  /* Chaque colonne prend l'espace disponible */
+    text-align: center;
+    font-weight: bold;
+    color: #007bff;
+}
+
+
+
+/* Container pour la liste des apprenants */
+.wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Flexbox pour organiser deux apprenants sur la même ligne */
+.flex {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+/* Boutons dans la liste */
+.btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #04fffb;
+    border-radius: 25px;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin: 5px;
+}
+
+.btn:hover {
+    background-color: #02c8c1;
+    transform: translateY(-2px);
+}
+
+.modifier {
+    background-color: #ffc107;
+}
+
+.modifier:hover {
+    background-color: #e0a800;
+}
+
+.terminer-btn {
+    background-color: #28a745;
+}
+
+.terminer-btn:hover {
+    background-color: #218838;
+}
+
+/* Alignement du corps */
+body {
+    display: flex;
+    justify-content: center;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    padding: 20px;
+}
