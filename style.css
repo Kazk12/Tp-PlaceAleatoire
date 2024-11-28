@@ -94,6 +94,12 @@
 .cancel:hover {
     background-color: #e0c33b;
 }
+
+
+.none{
+    display: none;
+}
+
 .colonne {
     flex-direction: column;
 }

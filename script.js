@@ -17,5 +17,17 @@ console.log(apprenants)
 function Handleterminer(){
 const formulaire = document.querySelector('#form');
     formulaire.classList.add("none")
+    
 }
+
+
+if(document.querySelector('#form').classList.contains("none")){
+console.log(document.querySelector('#form').classList.contains("none"))
+
+// const body = document.querySelector("body")
+// body.innerHTML += `<p>${apprenants.forEach((apprenant) => {
+//     apprenant
+// })}</p>`
+}
+
 
