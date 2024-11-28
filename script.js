@@ -1,73 +1,64 @@
-const ajoutez = document.querySelector('#ajoute');
-const terminer = document.querySelector('#termine');
-ajoutez.addEventListener('click', handleAjoutez);
-terminer.addEventListener('click', handleTerminer);
+const ajoutez = document.querySelector("#ajoute");
+const terminer = document.querySelector("#termine");
+ajoutez.addEventListener("click", handleAjoutez);
+// terminer.addEventListener('click', handleTerminer);
 
 const apprenants = [];
 
+// Fonction pour ajouter un prénom à la liste
 function handleAjoutez() {
-    const name = document.querySelector('#name');
+  const name = document.querySelector("#name");
+  
+  // Ajouter le prénom à la liste
+//   Trim permet de pas mettre d'espace dans le prénom
+  if (name.value.trim() !== "") {
     apprenants.push(name.value);
-    name.value = "";  // Effacer le champ de saisie après ajout
-    console.log(apprenants);
+  }
+  
+  // Effacer le champ de saisie après l'ajout
+  name.value = ""; 
+  
+  // Mettre à jour la liste dans le HTML
+  updateListe();
 }
 
-function handleTerminer() {
-    const formulaire = document.querySelector('#form');
-    formulaire.classList.add("none");
-
-    // Vérifier si la classe "none" est présente après l'ajout
-    if (formulaire.classList.contains("none")) {
-        console.log("La classe 'none' est présente.");
-        
-        // Créer une variable pour stocker le contenu HTML généré
-        let contenuHTML = '';
-
-        // Générer le contenu de la liste des apprenants, 2 par ligne
-        for (let i = 0; i < apprenants.length; i += 2) {
-            // Afficher 2 noms par ligne, donc nous prenons deux apprenants à chaque fois
-            contenuHTML += `<div class="apprenant flex">
-                <p class="cinq">${i + 1}. ${apprenants[i]}</p>
-                ${apprenants[i + 1] ? `<p class="cinq">${i + 2}. ${apprenants[i + 1]}</p>` : ''}
-            </div>`;
+// Fonction pour générer dynamiquement la liste d'apprenants
+function updateListe() {
+  let contenuHTML = "";
+  
+  // Générer le contenu de la liste des apprenants, 2 par ligne
+  for (let i = 0; i < apprenants.length; i += 2) {
+    // Afficher 2 prénoms par ligne
+    contenuHTML += `
+      <div class="apprenant flex">
+        <p class="cinq">${i + 1}. ${apprenants[i]}</p>
+        ${
+          apprenants[i + 1] 
+            ? `<p class="cinq">${i + 2}. ${apprenants[i + 1]}</p>` 
+            : ""
         }
+      </div>
+    `;
+  }
 
-        // Ajouter le contenu généré au body
-        const body = document.querySelector("body");
-        body.innerHTML += `<section id="Listes">
-        <div id="Liste" class="wrap cent">
-            <h2>Liste des Apprenants :</h2>
-            ${contenuHTML}
-            <div class="flex">
-                <a href="#" id="Prime" class="btn modifier">Modifier</a>
-                <a href="#" id="Finito" class="btn terminer-btn">Terminer</a>
-            </div>
-        </div>
-        </section>`;
+  // Vérifier si la section #Listes existe déjà, sinon la créer
+  let sectionListes = document.querySelector("#Listes");
+  if (!sectionListes) {
+    // Si la section n'existe pas, on la crée
+    sectionListes = document.createElement("section");
+    sectionListes.id = "Listes";
+    document.body.appendChild(sectionListes);
+  }
 
-         // Maintenant que l'élément #Finito existe, on peut ajouter l'écouteur d'événement
-         const TerminerListe = document.querySelector("#Finito"); 
-         TerminerListe.addEventListener("click", handleClickHideListe);
-         const ModifyListe = document.querySelector("#Prime");
-         ModifyListe.addEventListener("click", handleClickHideListeShowList)
-
-
-    }
-}
-function handleClickHideListe() {
-    const Listes = document.querySelector("#Listes");
-    if (Listes) {
-        Listes.classList.add("none");
-    } 
-}
-
-function handleClickHideListeShowList(){
-    const Listes = document.querySelector("Listes");
-    const formulaire = document.querySelector('#form');
-
-    if(Listes){
-        Listes.classList.add("none")
-    }
-    formulaire.classList.remove("none");
-
+  // Mettre à jour la section #Listes
+  sectionListes.innerHTML = `
+    <div id="Liste" class="wrap cent">
+      <h2>Liste des Apprenants :</h2>
+      ${contenuHTML}
+      <div class="flex">
+        <a href="#" id="Prime" class="btn modifier">Modifier</a>
+        <a href="#" id="Finito" class="btn terminer-btn">Terminer</a>
+      </div>
+    </div>
+  `;
 }
