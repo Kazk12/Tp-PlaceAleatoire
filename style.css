@@ -3,8 +3,10 @@
 .flex{
     display: flex;
     justify-content: center;
+    align-items: center;
     padding-top: 20px;
 }
+
 
 *{
     margin: 0;
@@ -94,6 +96,16 @@
 }
 
 
+
 .none{
     display: none;
 }
+
+
+.colonne {
+    flex-direction: column;
+}
+.btn{
+    border: 3px solid red;
+}
+
