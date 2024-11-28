@@ -1,6 +1,97 @@
 
+
 .flex{
     display: flex;
     justify-content: center;
     padding-top: 20px;
 }
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Style global pour le formulaire */
+.formulaire {
+    width: 80%;
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+}
+
+
+.formulaire h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #333;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: #04fffb;
+    outline: none;
+}
+
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+
+.btn {
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #04fffb;
+    border-radius: 25px;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    background-color: #02c8c1;
+    transform: translateY(-2px);
+}
+
+.cancel {
+    background-color: #ee2c01;
+}
+
+.cancel:hover {
+    background-color: #e0c33b;
+}
+
+
+>>>>>>> formulaire
