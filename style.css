@@ -97,6 +97,13 @@
 
 
 
+<<<<<<< HEAD
+=======
+.none{
+    display: none;
+}
+
+>>>>>>> 1329b21157f87ec9c64c79331406841ac931595d
 
 .colonne {
     flex-direction: column;
