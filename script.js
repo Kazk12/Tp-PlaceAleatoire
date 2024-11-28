@@ -1,26 +1,18 @@
 const ajoutez = document.querySelector('#ajoute');
 const terminer = document.querySelector('#termine');
-ajoutez.addEventListener('click', Handleajoutez);
-terminer.addEventListener('click', Handleterminer);
+ajoutez.addEventListener('click', handleAjoutez);
+terminer.addEventListener('click', handleTerminer);
+
 const apprenants = [];
-function Handleajoutez(){
-const name = document.querySelector('#name')
-// console.log(name.value)
-apprenants.push(name.value)
-name.value = "";
 
-console.log(apprenants)
-
-}
-
-function Handleajoutez() {
+function handleAjoutez() {
     const name = document.querySelector('#name');
     apprenants.push(name.value);
     name.value = "";  // Effacer le champ de saisie après ajout
     console.log(apprenants);
 }
 
-function Handleterminer() {
+function handleTerminer() {
     const formulaire = document.querySelector('#form');
     formulaire.classList.add("none");
 
@@ -42,13 +34,40 @@ function Handleterminer() {
 
         // Ajouter le contenu généré au body
         const body = document.querySelector("body");
-        body.innerHTML += `<div class="wrap cent">
+        body.innerHTML += `<section id="Listes">
+        <div id="Liste" class="wrap cent">
             <h2>Liste des Apprenants :</h2>
             ${contenuHTML}
             <div class="flex">
-                <a href="#" class="btn modifier">Modifier</a>
-                <a href="#" class="btn terminer-btn">Terminer</a>
+                <a href="#" id="Prime" class="btn modifier">Modifier</a>
+                <a href="#" id="Finito" class="btn terminer-btn">Terminer</a>
             </div>
-        </div>`;
+        </div>
+        </section>`;
+
+         // Maintenant que l'élément #Finito existe, on peut ajouter l'écouteur d'événement
+         const TerminerListe = document.querySelector("#Finito"); 
+         TerminerListe.addEventListener("click", handleClickHideListe);
+         const ModifyListe = document.querySelector("#Prime");
+         ModifyListe.addEventListener("click", handleClickHideListeShowList)
+
+
     }
+}
+function handleClickHideListe() {
+    const Listes = document.querySelector("#Listes");
+    if (Listes) {
+        Listes.classList.add("none");
+    } 
+}
+
+function handleClickHideListeShowList(){
+    const Listes = document.querySelector("Listes");
+    const formulaire = document.querySelector('#form');
+
+    if(Listes){
+        Listes.classList.add("none")
+    }
+    formulaire.classList.remove("none");
+
 }
