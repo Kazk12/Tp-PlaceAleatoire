@@ -10,6 +10,7 @@ const name = document.querySelector('#name')
 // console.log(name.value)
 apprenants.push(name.value)
 name.value = "";
+
 console.log(apprenants)
 
 }
