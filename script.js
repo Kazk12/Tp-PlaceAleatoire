@@ -43,13 +43,27 @@ function handleTerminer() {
 
         // Ajouter le contenu généré au body
         const body = document.querySelector("body");
-        body.innerHTML += `<div class="wrap cent">
+        body.innerHTML += `<section id="Listes">
+        <div id="Liste" class="wrap cent">
             <h2>Liste des Apprenants :</h2>
             ${contenuHTML}
             <div class="flex">
                 <a href="#" class="btn modifier">Modifier</a>
-                <a href="#" class="btn terminer-btn">Terminer</a>
+                <a href="#" id="Finito" class="btn terminer-btn">Terminer</a>
             </div>
-        </div>`;
+        </div>
+        </section>`;
+
+         // Maintenant que l'élément #Finito existe, on peut ajouter l'écouteur d'événement
+         const TerminerListe = document.querySelector("#Finito"); 
+         TerminerListe.addEventListener("click", handleClickHideListe);
+
+
     }
+}
+function handleClickHideListe() {
+    const Listes = document.querySelector("#Listes");
+    if (Listes) {
+        Listes.classList.add("none");
+    } 
 }
