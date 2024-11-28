@@ -4,11 +4,18 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+body{
+    /* background-image: url(/flou-demouvement-photo.webp);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    min-height: 100vh; */
+   
+}
 
 
 header {
-    margin-top: 20px;
+    
     display: flex;
     justify-content: center; 
     align-items: center;     
@@ -38,7 +45,7 @@ header p:hover {
 
 .formulaire {
     width: 100%;
-    max-width: 700px;
+    max-width: 600px;
     margin: 40px auto;
     padding: 20px;
     background-color: #f9f9f9;
@@ -191,6 +198,7 @@ header p:hover {
 
 .modifier {
     background-color: #ffc107;
+    margin-left: 170px;
 }
 
 .modifier:hover {
@@ -199,6 +207,7 @@ header p:hover {
 
 .terminer-btn {
     background-color: #28a745;
+    margin-left: 100px;
 }
 
 .terminer-btn:hover {
