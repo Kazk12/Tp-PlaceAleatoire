@@ -1,5 +1,9 @@
 const ajoutez = document.querySelector("#ajoute");
 const terminer = document.querySelector("#termine");
+let newX = 0, newY =0, startX = 0, startY = 0;
+
+
+
 ajoutez.addEventListener("click", handleClickAjoutezApprenants);
 terminer.addEventListener('click', handleClickTerminer);
 
@@ -30,7 +34,7 @@ function updateListe() {
   for (let i = 0; i < apprenants.length; i += 2) {
     // Afficher 2 prénoms par ligne
     contenuHTML += `
-      <div class="apprenant flex">
+      <div class="apprenant">
         <p class="cinq">${i + 1}. ${apprenants[i]}</p>
         ${apprenants[i + 1] ? `<p class="cinq">${i + 2}. ${apprenants[i + 1]}</p>` 
             : ""
@@ -38,6 +42,10 @@ function updateListe() {
       </div>
     `;
   }
+  // Le ? permet de vérifier la condition juste avant lui et d'appliquer la valeur juste après lui
+  // Le : permet de faire ce qu'il y a juste après lui si la condition n'est pas vérifier
+
+
 
   // Vérifier si la section #Listes existe déjà, sinon la créer
   let sectionListes = document.querySelector("#Listes");
@@ -53,7 +61,7 @@ function updateListe() {
 
   // Mettre à jour la section #Listes
   sectionListes.innerHTML = `
-    <div id="Liste" class="wrap cent">
+    <div class="wrap cent">
       <h2>Liste des Apprenants :</h2>
       ${contenuHTML}
       <div class="flex">
@@ -70,5 +78,71 @@ function handleClickTerminer (){
   let Tout = document.querySelector("#Tout");
   Tout.classList.remove("flex");
   Tout.classList.add("none");
+if(Tout.classList.contains("none")){
+
+  let contenuHTMLTables = "";
+  
+  // Générer le contenu de la liste des apprenants, 2 par ligne
+  for (let i = 0; i < apprenants.length; i += 1) {
+    // Afficher 2 prénoms par ligne
+    contenuHTMLTables += `
+      <div class="Table alignCenter trois ChaqueTable">
+      
+        <p></p> 
+      </div>
+    `;
+
+
+    let Tables = document.querySelector("#Tables");
+    if (!Tables) {
+  
+      // Si la section n'existe pas, on la crée
+      Tables = document.createElement("section");
+      Tables.id = "Tables";
+      Tables.classList = "textCentre cent"
+      document.body.appendChild(Tables);
+    }
+
+
+
+
+ // Mettre à jour la section #Tables
+ Tables.innerHTML = `
+   <h2>Les tables :</h2>
+   <div class="Center">
+    <a id="Genere" class="Genere">Genere</a>
+   </div>
+ <article id="table" class="RetourLigne">
+   ${contenuHTMLTables}
+ </article>
+`;
+
+  }
+
+const BoutonGenere = document.querySelector("#Genere");
+
+BoutonGenere.addEventListener("click", handleClickGenerePrenom)
+
+
+
 
 }
+
+}
+function handleClickGenerePrenom(){
+ const ToutesLesTables = document.querySelectorAll(".ChaqueTable");
+ 
+}
+
+
+
+function TableauRandom(Tableau){
+  const NumeroRandom = Math.floor(Math.random() * Tableau.length);
+
+  const PlaceDuNumeroRandom = Tableau[NumeroRandom];
+
+  Tableau.splice(NumeroRandom, 1);
+
+  return PlaceDuNumeroRandom
+}
+

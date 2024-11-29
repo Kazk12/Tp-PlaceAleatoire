@@ -38,6 +38,13 @@ header p:hover {
     color: #04fffb; 
 }
 
+
+
+/* Page 2 */
+
+
+
+
 .formulaire {
     width: 100%;
     max-width: 600px;
@@ -96,82 +103,20 @@ header p:hover {
 }
 
 
-.btn {
-    text-decoration: none;
-    padding: 10px 20px;
-    font-size: 1rem;
-    color: #fff;
-    background-color: #04fffb;
-    border-radius: 25px;
-    text-align: center;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
+
+
+
+/* Style pour les boutons d'ajoutez, terminer et effet au survol : */
+
+
 
 #termine{
     background-color: rgb(251, 46, 46);
 }
 
-.btn:hover {
-    background-color: #02c8c1;
-    transform: translateY(-2px);
-}
-
-
-
-
 #termine:hover {
     background-color: rgb(251, 0, 0);
 }
-.none{
-    display: none;
-}
-
-
-
-
-
-.apprenant {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 10px;
-    transition: background-color 0.3s ease;
-}
-
-.apprenant:hover {
-    background-color: #f0f8ff;
-}
-
-
-.cinq {
-    font-size: 18px;
-    color: #333;
-    flex: 1;  
-    text-align: center;
-    font-weight: bold;
-    color: #007bff;
-}
-
-
-
-
-.wrap {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding: 20px;
-    max-width: 700px;
-    margin: 0 auto;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-}
-
-
 
 
 
@@ -210,9 +155,72 @@ header p:hover {
     background-color: #218838;
 }
 
+
+
+
+/* Faire disparaitre la liste et l'ajout d'apprenants */
+
+
+.none{
+    display: none;
+}
+
+
+
+
+/* Style pour les boites ajout d'apprenant */
+
+
+.apprenant {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.apprenant:hover {
+    background-color: #f0f8ff;
+}
+
+
+
+
+/* Classe pour les flex (pour bien les positionner */
+
+
+.cinq {
+    font-size: 18px;
+    color: #333;
+    flex: 1;  
+    text-align: center;
+    font-weight: bold;
+    color: #007bff;
+}
+
 .quatre {
     width: 40%;
 }
+
+
+.wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+
+
 
 .flex{
     display: flex;
@@ -247,13 +255,12 @@ header p:hover {
 h2 {
     font-size: 2.6rem;
     color: #333;
-    margin-bottom: 30px;
     font-weight: 600;
     line-height: 1.4;
     letter-spacing: 1px;
     text-transform: capitalize;
 }
-/* Texte de présentation */
+/* Texte de présentation de la 1er page*/
 .texte {
     color: #333;  
     font-size: 2.4rem; 
@@ -264,7 +271,7 @@ h2 {
     max-width: 80%;  
     margin: 0 auto;  
     padding: 20px;  
-    white-space: pre-line; /* Pour respecter les sauts de ligne dans le HTML */
+    white-space: pre-line; 
 }
 
 
@@ -299,5 +306,60 @@ h2 {
 
 
 
+.Table{
+    border: 3px solid black;
+    /* width: 100px; */
+    height: 50px;
+}
 
 
+.cent {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+.textCentre{
+    text-align: center;
+}
+
+
+.trois {
+    width: 12%;
+}
+
+.RetourLigne {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+
+
+.Genere{
+    width: 10vw;
+    margin-top: 20px;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    color: #fff;
+    background-color: green;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-align: center;
+    display: inline-block; 
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.Center {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
