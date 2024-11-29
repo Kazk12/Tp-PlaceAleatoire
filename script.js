@@ -1,6 +1,5 @@
 const ajoutez = document.querySelector("#ajoute");
 const terminer = document.querySelector("#termine");
-let newX = 0, newY =0, startX = 0, startY = 0;
 
 
 
@@ -65,7 +64,7 @@ function updateListe() {
       <h2>Liste des Apprenants :</h2>
       ${contenuHTML}
       <div class="flex">
-        <a href="#" id="Prime" class="btn modifier">Modifier</a>
+        <a href="#" id="Prime" onClick="change()"  class="btn modifier">Modifier</a>
         <a href="#" id="Finito" class="btn terminer-btn">Terminer</a>
       </div>
     </div>
@@ -88,7 +87,9 @@ if(Tout.classList.contains("none")){
     contenuHTMLTables += `
       <div class="Table alignCenter trois ChaqueTable">
       
-        <p></p> 
+        <p class="toi">Toi</p> 
+        <p class="moi">Moi/p> 
+        <p class="lui">lui</p> 
       </div>
     `;
 
@@ -123,26 +124,34 @@ const BoutonGenere = document.querySelector("#Genere");
 
 BoutonGenere.addEventListener("click", handleClickGenerePrenom)
 
-
-
-
 }
 
 }
+
 function handleClickGenerePrenom(){
  const ToutesLesTables = document.querySelectorAll(".ChaqueTable");
+ ToutesLesTables.forEach((Table) => {
+    console.log(document.querySelectorAll(".toi"))
+    console.log(document.querySelectorAll(".moi"))
+    console.log(document.querySelectorAll(".lui"))
+ })
  
 }
 
 
 
 function TableauRandom(Tableau){
-  const NumeroRandom = Math.floor(Math.random() * Tableau.length);
+  const NumeroRandom = Math.floor(Math.random() * Tableau.lenght);
 
   const PlaceDuNumeroRandom = Tableau[NumeroRandom];
 
   Tableau.splice(NumeroRandom, 1);
 
-  return PlaceDuNumeroRandom
+  return NumeroRandom;
 }
 
+
+function change() {
+    const button = document.getElementById('Prime'); 
+    button.innerText = 'Nouveau Texte';
+}
