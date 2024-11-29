@@ -198,7 +198,7 @@ header p:hover {
 
 .modifier {
     background-color: #ffc107;
-    margin-left: 170px;
+    
 }
 
 .modifier:hover {
@@ -207,12 +207,29 @@ header p:hover {
 
 .terminer-btn {
     background-color: #28a745;
-    margin-left: 100px;
+    
 }
 
 .terminer-btn:hover {
     background-color: #218838;
 }
 
+.quatre {
+    width: 40%;
+}
 
+.flex{
+    display: flex;
+    justify-content: space-between;
+}
 
+.alignCenter {
+    display: flex;
+    align-items: center;
+}
+
+.colonne {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}

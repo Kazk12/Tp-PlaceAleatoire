@@ -10,7 +10,7 @@ function handleAjoutez() {
   const name = document.querySelector("#name");
   
   // Ajouter le prénom à la liste
-//   Trim permet de pas mettre d'espace dans le prénom
+  // Trim permet de pas mettre d'espace dans le prénom
   if (name.value.trim() !== "") {
     apprenants.push(name.value);
   }
@@ -32,9 +32,7 @@ function updateListe() {
     contenuHTML += `
       <div class="apprenant flex">
         <p class="cinq">${i + 1}. ${apprenants[i]}</p>
-        ${
-          apprenants[i + 1] 
-            ? `<p class="cinq">${i + 2}. ${apprenants[i + 1]}</p>` 
+        ${apprenants[i + 1] ? `<p class="cinq">${i + 2}. ${apprenants[i + 1]}</p>` 
             : ""
         }
       </div>
@@ -44,10 +42,13 @@ function updateListe() {
   // Vérifier si la section #Listes existe déjà, sinon la créer
   let sectionListes = document.querySelector("#Listes");
   if (!sectionListes) {
+    let Tout = document.querySelector("#Tout")
+
     // Si la section n'existe pas, on la crée
-    sectionListes = document.createElement("section");
+    sectionListes = document.createElement("article");
     sectionListes.id = "Listes";
-    document.body.appendChild(sectionListes);
+    sectionListes.classList = "quatre alignCenter"
+    Tout.appendChild(sectionListes);
   }
 
   // Mettre à jour la section #Listes
