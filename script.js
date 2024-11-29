@@ -1,12 +1,12 @@
 const ajoutez = document.querySelector("#ajoute");
 const terminer = document.querySelector("#termine");
-ajoutez.addEventListener("click", handleAjoutez);
-// terminer.addEventListener('click', handleTerminer);
+ajoutez.addEventListener("click", handleClickAjoutezApprenants);
+terminer.addEventListener('click', handleClickTerminer);
 
 const apprenants = [];
 
 // Fonction pour ajouter un prénom à la liste
-function handleAjoutez() {
+function handleClickAjoutezApprenants() {
   const name = document.querySelector("#name");
   
   // Ajouter le prénom à la liste
@@ -62,4 +62,13 @@ function updateListe() {
       </div>
     </div>
   `;
+}
+
+
+
+function handleClickTerminer (){
+  let Tout = document.querySelector("#Tout");
+  Tout.classList.remove("flex");
+  Tout.classList.add("none");
+
 }
