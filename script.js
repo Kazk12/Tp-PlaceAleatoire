@@ -1,6 +1,5 @@
 const ajoutez = document.querySelector("#ajoute");
 const terminer = document.querySelector("#termine");
-let newX = 0, newY =0, startX = 0, startY = 0;
 
 
 
@@ -88,7 +87,7 @@ if(Tout.classList.contains("none")){
     contenuHTMLTables += `
       <div class="Table alignCenter trois ChaqueTable">
       
-        <p></p> 
+        <p class="Toi"></p> 
       </div>
     `;
 
@@ -123,26 +122,39 @@ const BoutonGenere = document.querySelector("#Genere");
 
 BoutonGenere.addEventListener("click", handleClickGenerePrenom)
 
-
+// handleClickGenerePrenom();
 
 
 }
 
 }
+let TableauNom = "";
+
+
 function handleClickGenerePrenom(){
  const ToutesLesTables = document.querySelectorAll(".ChaqueTable");
+ TableauNom = apprenants
+ TableauRandom(TableauNom)
+ ToutesLesTables.forEach((Table, index) => {
+  // console.log(document.querySelectorAll(".Toi"))
+  Table.querySelector(".Toi").innerText = TableauNom[index]
+
+ })
  
 }
 
 
 
 function TableauRandom(Tableau){
-  const NumeroRandom = Math.floor(Math.random() * Tableau.length);
 
-  const PlaceDuNumeroRandom = Tableau[NumeroRandom];
 
-  Tableau.splice(NumeroRandom, 1);
+  for (i = Tableau.length - 1 ; i >= 0 ; i--) {
+  const NumeroRandom = Math.floor(Math.random() * (i +1));
+    Tableau.push(Tableau[NumeroRandom])
+    Tableau.splice(NumeroRandom, 1);
 
-  return PlaceDuNumeroRandom
+  }
+
+  return Tableau
 }
 
