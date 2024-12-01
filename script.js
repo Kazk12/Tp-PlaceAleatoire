@@ -64,12 +64,28 @@ function updateListe() {
       <h2>Liste des Apprenants :</h2>
       ${contenuHTML}
       <div class="flex">
-        <a href="#" id="Prime" onClick="change()"  class="btn modifier">Modifier</a>
-        <a href="#" id="Finito" class="btn terminer-btn">Terminer</a>
+        <a href="#" id="Prime"  class="btn modifier">Supprimer</a>
+        <a href="#" id="Finito" class="btn terminer-btn">Tout supprimer</a>
       </div>
     </div>
   `;
+  document.querySelector("#Prime").addEventListener("click", handleClickSupprimer);
+
+  document.querySelector("#Finito").addEventListener("click", ToutSupprimer)
+
 }
+
+
+function handleClickSupprimer(){
+  apprenants.splice(-1, 1)
+  updateListe();
+}
+
+function ToutSupprimer(){
+  apprenants.length = 0;
+  updateListe();
+}
+
 
 
 
@@ -85,8 +101,8 @@ if(Tout.classList.contains("none")){
   for (let i = 0; i < apprenants.length; i += 1) {
     // Afficher 2 prénoms par ligne
     contenuHTMLTables += `
-      <div class="Table alignCenter trois ChaqueTable">
-      
+      <div class="Table alignCenter trois ChaqueTable JustifyCentre">
+     <p> ${i + 1}. </p>
         <p class="Toi"></p> 
       </div>
     `;
@@ -159,7 +175,3 @@ function TableauRandom(Tableau){
 }
 
 
-function change() {
-    const button = document.getElementById('Prime'); 
-    button.innerText = 'Nouveau Texte';
-}

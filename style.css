@@ -363,3 +363,9 @@ h2 {
     justify-content: center;
     align-items: center;
 }
+
+.JustifyCentre{
+    display: flex;
+    justify-content: center;
+    gap : 10px;
+}
