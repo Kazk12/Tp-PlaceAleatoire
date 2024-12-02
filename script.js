@@ -4,16 +4,28 @@ const terminer = document.querySelector("#termine");
 let newX = 0, newY =0, startX = 0, startY = 0;
 
 ajoutez.addEventListener("click", handleClickAjoutezApprenants);
+document.querySelector("#name").addEventListener("keypress", handleKeyPressEnter);
 terminer.addEventListener('click', handleClickTerminer);
-
-// const audio = document.querySelector("#sons") // Assurez-vous que le fichier audio est à la bonne adresse
-
+document.querySelector("#LaSave").addEventListener("click", handleClickStockLaListe);
 
 
-const apprenants = [];
+function handleKeyPressEnter(event){
+
+  if (event.keyCode === 13) {
+
+    handleClickAjoutezApprenants();
+    
+  }
+}
+
+
+
+
+
+let apprenants = [];
 
 // Cette fonction permet d'ajouter un prénom dans le tableau apprenants
-function handleClickAjoutezApprenants() {
+function handleClickAjoutezApprenants(event) {
   const name = document.querySelector("#name");
   
   // Ajouter le prénom à la liste
@@ -22,6 +34,7 @@ function handleClickAjoutezApprenants() {
     apprenants.push(name.value);
   }
   
+ 
   // Quand on écrit un prénom et qu'on l'ajoute, le texte du prénom est directement supprimer pour qu'on note le suivant.
   name.value = ""; 
   
@@ -72,11 +85,12 @@ function updateListe() {
       <div class="flex">
         <a href="#" id="Prime"  class="btn modifier">Supprimer</a>
         <a href="#" id="Finito" class="btn terminer-btn">Tout supprimer</a>
+        <a href="#" id="Storage" class="btn">Save</a>
       </div>
     </div>
   `;
 
-
+document.querySelector("#Storage").addEventListener("click", handleClickSaveStorage);
   // Mise en place d'un eventListener sur les bouton afin de supprimer les prénoms
   document.querySelector("#Prime").addEventListener("click", handleClickSupprimer);
 
@@ -84,9 +98,37 @@ function updateListe() {
 
 }
 
+
+
+
+
+// Fonction pour sauvegarder dans le localStorage
+function handleClickSaveStorage() {
+  // Sauvegarde de la variable apprenants dans le localStorage
+  localStorage.setItem("Students", JSON.stringify(apprenants));  // Convertir en chaîne JSON
+
+}
+
+// Fonction pour charger depuis le localStorage
+function handleClickStockLaListe() {
+  // Récupérer les données du localStorage
+  const PrenomApprenantsStocker = localStorage.getItem("Students");
+
+  // Si des données existent dans le localStorage
+  if (PrenomApprenantsStocker) {
+    apprenants = JSON.parse(PrenomApprenantsStocker);  // Convertir la chaîne JSON en tableau ou objet
+  } else {
+    console.log("Aucune donnée trouvée dans le localStorage.");
+  }
+  updateListe()
+}
+
+
+
+
 // Les functions qui permettent de supprimer les prénoms
 function handleClickSupprimer(){
-  // audio.play();
+  
   apprenants.splice(-1, 1)
   updateListe();
 }
@@ -163,7 +205,7 @@ document.querySelectorAll(".ChaqueTable").forEach((table, index) =>{
 const BoutonGenere = document.querySelector("#Genere");
 
 
-  BoutonGenere.addEventListener("click", handleClickGenerePrenom)
+BoutonGenere.addEventListener("click", handleClickGenerePrenom)
 
 
 }
