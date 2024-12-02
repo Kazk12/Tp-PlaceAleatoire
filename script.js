@@ -2,7 +2,6 @@ const ajoutez = document.querySelector("#ajoute");
 const terminer = document.querySelector("#termine");
 
 
-
 ajoutez.addEventListener("click", handleClickAjoutezApprenants);
 terminer.addEventListener('click', handleClickTerminer);
 
@@ -153,6 +152,8 @@ BoutonGenere.addEventListener("click", handleClickGenerePrenom)
 
 
 
+
+
 }
 
 }
@@ -195,6 +196,17 @@ function TableauRandom(Tableau){
 
   // On récupère la valeur du Tableau
   return Tableau
+}
+
+
+
+function initaliserBougerLesTables() {
+  const chaqueTable = document.querySelectorAll(".ChaqueTable");
+
+  // Ajoute un événement de "mousedown" sur chaque table
+  chaqueTable.forEach((table) => {
+    table.addEventListener("mousedown", handleMouseDownTable);
+  });
 }
 
 
