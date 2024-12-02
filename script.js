@@ -151,6 +151,10 @@ if(Tout.classList.contains("none")){
  </article>
 `;
 
+document.querySelectorAll(".ChaqueTable").forEach((table, index) =>{
+  table.style.left = (5 + (index*8)) + "vw"
+} )
+
   }
 
 // Ici on récupère l'élément Genere de la section à l'id Tables afin de lui ajouter un event qui va permettre de mettre les prénoms directement dans les différentes tables générer aléatoirement. 
