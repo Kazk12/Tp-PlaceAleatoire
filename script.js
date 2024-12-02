@@ -1,9 +1,14 @@
 const ajoutez = document.querySelector("#ajoute");
 const terminer = document.querySelector("#termine");
 
+let newX = 0, newY =0, startX = 0, startY = 0;
 
 ajoutez.addEventListener("click", handleClickAjoutezApprenants);
 terminer.addEventListener('click', handleClickTerminer);
+
+// const audio = document.querySelector("#sons") // Assurez-vous que le fichier audio est à la bonne adresse
+
+
 
 const apprenants = [];
 
@@ -62,7 +67,7 @@ function updateListe() {
   // Mettre à jour la section #Listes, pour chaque prénom qui est ajouter
   articleListes.innerHTML = `
     <div class="wrap cent">
-      <h2>Liste des Apprenants :</h2>
+      <h2 class="textCentre">Liste des Apprenants :</h2>
       ${contenuHTML}
       <div class="flex">
         <a href="#" id="Prime"  class="btn modifier">Supprimer</a>
@@ -94,8 +99,12 @@ function ToutSupprimer(){
 // Fonction quand on appuie sur le bouton Terminer afin de générer les tables et de faire disparaître la section à l'id Tout (qui fait disparaître la div ajout d'apprenant et la liste)
 
 function handleClickTerminer (){
+ 
+
+  // Ajoutez ici votre code pour gérer la logique de "Terminer"
+  
   let Tout = document.querySelector("#Tout");
-  Tout.classList.remove("flex");
+  Tout.classList.remove("random");
   Tout.classList.add("none");
 
 // Si la section à l'id Tout contient la classe "none" alors on va générer les tables 
@@ -109,7 +118,7 @@ if(Tout.classList.contains("none")){
   for (let i = 0; i < apprenants.length; i += 1) {
     contenuHTMLTables += `
       <div class="Table alignCenter trois ChaqueTable JustifyCentre">
-     <p> ${i + 1}. </p>
+
         <p class="Toi"></p> 
       </div>
     `;
@@ -148,10 +157,9 @@ if(Tout.classList.contains("none")){
 
 const BoutonGenere = document.querySelector("#Genere");
 
-BoutonGenere.addEventListener("click", handleClickGenerePrenom)
 
-
-
+  BoutonGenere.addEventListener("click", handleClickGenerePrenom)
+// handleClickGenerePrenom();
 
 
 }
@@ -162,6 +170,10 @@ BoutonGenere.addEventListener("click", handleClickGenerePrenom)
 
 let TableauNom = [];
 
+
+function handleClickSon(){
+
+}
 
 function handleClickGenerePrenom(){
   // On récupère toutes les tables
