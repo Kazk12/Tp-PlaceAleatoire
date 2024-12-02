@@ -84,8 +84,9 @@ function updateListe() {
       ${contenuHTML}
       <div class="flex">
         <a href="#" id="Prime"  class="btn modifier">Supprimer</a>
-        <a href="#" id="Finito" class="btn terminer-btn">Tout supprimer</a>
         <a href="#" id="Storage" class="btn">Save</a>
+        <a href="#" id="Finito" class="btn terminer-btn">Tout supprimer</a>
+
       </div>
     </div>
   `;

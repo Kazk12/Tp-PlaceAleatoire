@@ -109,7 +109,14 @@ header p:hover {
 
 /* Style pour les boutons d'ajoutez, terminer et effet au survol : */
 
+#LaSave {
+    background-color: #218838;
+}
 
+#Storage{
+    background-color: #218838;
+
+}
 
 #termine{
     background-color: rgb(251, 46, 46);
@@ -148,12 +155,12 @@ header p:hover {
 }
 
 .terminer-btn {
-    background-color: #28a745;
+    background-color: rgb(251, 46, 46);
     
 }
 
 .terminer-btn:hover {
-    background-color: #218838;
+    background-color: rgb(219, 42, 42);
 }
 
 
