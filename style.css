@@ -190,7 +190,7 @@ header p:hover {
 
 
 
-/* Classe pour les flex (pour bien les positionner */
+/* Classe pour les flex (pour bien les positionner) */
 
 
 .cinq {
@@ -260,6 +260,9 @@ h2 {
     letter-spacing: 1px;
     text-transform: capitalize;
 }
+
+
+
 /* Texte de présentation de la 1er page*/
 .texte {
     color: #333;  
@@ -306,6 +309,9 @@ h2 {
 
 
 
+/* Style pour les tables */
+
+
 .Table{
     border: 3px solid black;
     /* width: 100px; */
@@ -338,6 +344,9 @@ h2 {
     justify-content: center;
 }
 
+
+
+/* Bouton Génére pour les places */
 
 
 .Genere{
