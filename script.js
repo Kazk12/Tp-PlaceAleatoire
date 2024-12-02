@@ -152,7 +152,7 @@ if(Tout.classList.contains("none")){
 `;
 
 document.querySelectorAll(".ChaqueTable").forEach((table, index) =>{
-  table.style.left = (5 + (index*8)) + "vw"
+  table.style.left = (5 + (index*5)) + "vw"
 } )
 
   }
@@ -163,7 +163,6 @@ const BoutonGenere = document.querySelector("#Genere");
 
 
   BoutonGenere.addEventListener("click", handleClickGenerePrenom)
-// handleClickGenerePrenom();
 
 
 }
