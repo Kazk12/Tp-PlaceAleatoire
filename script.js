@@ -179,38 +179,37 @@ function TableauRandom(Tableau){
 
 
 
-// function initaliserBougerLesTables() {
+function initaliserBougerLesTables() {
   
     
-//   const ChaqueTable = document.querySelectorAll(".ChaqueTable");
-//   // ChaqueTable.forEach((Table) => {
-//   //   Table.addEventListener("mousedown", handleMouseDownTable);
-//   // }) 
-//   document.addEventListener ("mousedown", handleMouseDownTable);  
+  const ChaqueTable = document.querySelectorAll(".ChaqueTable");
+  // ChaqueTable.forEach((Table) => {
+  //   Table.addEventListener("mousedown", handleMouseDownTable);
+  // }) 
+  document.addEventListener ("mousedown", handleMouseDownTable);  
   
-// } 
+} 
 
+function handleMouseDownTable(event){
+startX = event.clientX;
+startY = event.clientY;
+event.target.addEventListener("mousemove", handleMouseMoveTable);
+event.target.addEventListener("mouseup", handleMouseUpTable);
+}
 
+function handleMouseMoveTable (event){
+newX = startX - event.clientX;
+newY = startY - event.clientY;
 
-// function handleMouseDownTable(event){
-// startX = event.clientX;
-// startY = event.clientY;
-// event.target.addEventListener("mousemove", handleMouseMoveTable);
-// event.target.addEventListener("mouseup", handleMouseUpTable);
-// }
+startX = event.clientX;
+startY = event.clientY;
 
-// function handleMouseMoveTable (event){
-// newX = startX - event.clientX;
-// newY = startY - event.clientY;
+event.target.style.top = (event.target.offsetTop - newY) + "px";
+event.target.style.left = (event.target.offsetLeft - newX) + "px";
 
-// startX = event.clientX;
-// startY = event.clientY;
+}
 
-// event.target.style.top = (event.target.offsetTop - newY) + "px";
-// event.target.style.left = (event.target.offsetLeft - newX) + "px";
-// }
-
-// function handleMouseUpTable(event){
-// document.removeEventListener("mousemove", handleMouseMoveTable)
-// }
-// initaliserBougerLesTables()
+function handleMouseUpTable(event){
+document.removeEventListener("mousemove", handleMouseMoveTable)
+}
+initaliserBougerLesTables()
