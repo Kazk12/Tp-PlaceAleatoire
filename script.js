@@ -6,6 +6,10 @@ let newX = 0, newY =0, startX = 0, startY = 0;
 ajoutez.addEventListener("click", handleClickAjoutezApprenants);
 terminer.addEventListener('click', handleClickTerminer);
 
+const audio = document.querySelector("#sons") // Assurez-vous que le fichier audio est à la bonne adresse
+
+
+
 const apprenants = [];
 
 // Fonction pour ajouter un prénom à la liste
@@ -61,7 +65,7 @@ function updateListe() {
   // Mettre à jour la section #Listes
   sectionListes.innerHTML = `
     <div class="wrap cent">
-      <h2>Liste des Apprenants :</h2>
+      <h2 class="textCentre">Liste des Apprenants :</h2>
       ${contenuHTML}
       <div class="flex">
         <a href="#" id="Prime"  class="btn modifier">Supprimer</a>
@@ -90,8 +94,13 @@ function ToutSupprimer(){
 
 
 function handleClickTerminer (){
+  audio.play();
+
+  // Ajoutez ici votre code pour gérer la logique de "Terminer"
+  console.log("Le bouton 'Terminer' a été cliqué.");
+
   let Tout = document.querySelector("#Tout");
-  Tout.classList.remove("flex");
+  Tout.classList.remove("random");
   Tout.classList.add("none");
 if(Tout.classList.contains("none")){
 
@@ -102,7 +111,7 @@ if(Tout.classList.contains("none")){
     // Afficher 2 prénoms par ligne
     contenuHTMLTables += `
       <div class="Table alignCenter trois ChaqueTable JustifyCentre">
-     <p> ${i + 1}. </p>
+
         <p class="Toi"></p> 
       </div>
     `;
@@ -136,10 +145,9 @@ if(Tout.classList.contains("none")){
 
   
 
-const BoutonGenere = document.querySelector("#Genere");
+  const BoutonGenere = document.querySelector("#Genere");
 
-BoutonGenere.addEventListener("click", handleClickGenerePrenom)
-
+  BoutonGenere.addEventListener("click", handleClickGenerePrenom)
 // handleClickGenerePrenom();
 
 
@@ -148,6 +156,10 @@ BoutonGenere.addEventListener("click", handleClickGenerePrenom)
 }
 let TableauNom = "";
 
+
+function handleClickSon(){
+
+}
 
 function handleClickGenerePrenom(){
  const ToutesLesTables = document.querySelectorAll(".ChaqueTable");
@@ -190,11 +202,17 @@ function initaliserBougerLesTables() {
   
 } 
 
+let TableQuiBouge
+
 function handleMouseDownTable(event){
 startX = event.clientX;
 startY = event.clientY;
-event.target.addEventListener("mousemove", handleMouseMoveTable);
-event.target.addEventListener("mouseup", handleMouseUpTable);
+
+document.addEventListener("mousemove", handleMouseMoveTable);
+
+TableQuiBouge = event.target
+
+document.addEventListener("mouseup", handleMouseUpTable);
 }
 
 function handleMouseMoveTable (event){
@@ -204,12 +222,16 @@ newY = startY - event.clientY;
 startX = event.clientX;
 startY = event.clientY;
 
-event.target.style.top = (event.target.offsetTop - newY) + "px";
-event.target.style.left = (event.target.offsetLeft - newX) + "px";
+TableQuiBouge.style.top = (TableQuiBouge.offsetTop - newY) + "px";
+TableQuiBouge.style.left = (TableQuiBouge.offsetLeft - newX) + "px";
 
 }
 
 function handleMouseUpTable(event){
-document.removeEventListener("mousemove", handleMouseMoveTable)
+// console.log("ohhh");
+
+document.removeEventListener("mouseup", handleMouseUpTable)
+document.removeEventListener("mousemove", handleMouseMoveTable);
+
 }
 initaliserBougerLesTables()

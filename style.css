@@ -48,7 +48,8 @@ header p:hover {
 .formulaire {
     width: 100%;
     max-width: 600px;
-    margin: 40px auto;
+    height: 100%;
+    max-height: 250px;
     padding: 20px;
     background-color:rgb(241, 219, 178);
     border-radius: 10px;
@@ -214,17 +215,25 @@ header p:hover {
     padding: 20px;
     max-width: 700px;
     margin: 0 auto;
-    background-color: #f9f9f9;
+    background-color:rgb(241, 219, 178);
     border-radius: 10px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+    border: 3px rgba(0, 0, 0, 0.637) solid;
 }
 
 
-
+.random{
+    display: flex;
+    justify-content: center;
+   gap: 20px;
+}
 
 .flex{
     display: flex;
     justify-content: space-between;
+   
+  
 }
 
 
@@ -317,6 +326,9 @@ h2 {
     /* width: 100px; */
     height: 80px;
     position: absolute;
+    top: 70vh;
+    left: 47vw;
+    
 }
 
 
