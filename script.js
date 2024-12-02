@@ -86,6 +86,7 @@ function updateListe() {
 
 // Les functions qui permettent de supprimer les prénoms
 function handleClickSupprimer(){
+  // audio.play();
   apprenants.splice(-1, 1)
   updateListe();
 }
@@ -152,7 +153,7 @@ if(Tout.classList.contains("none")){
 `;
 
 document.querySelectorAll(".ChaqueTable").forEach((table, index) =>{
-  table.style.left = (5 + (index*8)) + "vw"
+  table.style.left = (5 + (index*6)) + "vw"
 } )
 
   }

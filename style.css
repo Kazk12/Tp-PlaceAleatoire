@@ -326,7 +326,7 @@ h2 {
     /* width: 100px; */
     height: 80px;
     position: absolute;
-    top: 70vh;
+    top: 85vh;
     left: 47vw;
     
 }
@@ -378,6 +378,10 @@ h2 {
     justify-content: center;
     cursor: pointer;
 }
+.Genere:hover{
+    transform: translateY(-2px);
+    background-color: rgb(1, 189, 1);
+}
 
 .Center {
     width: 100%;
@@ -392,7 +396,10 @@ h2 {
     gap : 10px;
 }
 
-
+.Toi{
+    font-size: 1.2rem;
+    font-weight: 700;
+}
 
 
 
