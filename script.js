@@ -1,7 +1,7 @@
 const ajoutez = document.querySelector("#ajoute");
 const terminer = document.querySelector("#termine");
 
-
+let newX = 0, newY =0, startX = 0, startY = 0;
 
 ajoutez.addEventListener("click", handleClickAjoutezApprenants);
 terminer.addEventListener('click', handleClickTerminer);
@@ -134,6 +134,8 @@ if(Tout.classList.contains("none")){
 
   }
 
+  
+
 const BoutonGenere = document.querySelector("#Genere");
 
 BoutonGenere.addEventListener("click", handleClickGenerePrenom)
@@ -175,3 +177,40 @@ function TableauRandom(Tableau){
 }
 
 
+
+
+// function initaliserBougerLesTables() {
+  
+    
+//   const ChaqueTable = document.querySelectorAll(".ChaqueTable");
+//   // ChaqueTable.forEach((Table) => {
+//   //   Table.addEventListener("mousedown", handleMouseDownTable);
+//   // }) 
+//   document.addEventListener ("mousedown", handleMouseDownTable);  
+  
+// } 
+
+
+
+// function handleMouseDownTable(event){
+// startX = event.clientX;
+// startY = event.clientY;
+// event.target.addEventListener("mousemove", handleMouseMoveTable);
+// event.target.addEventListener("mouseup", handleMouseUpTable);
+// }
+
+// function handleMouseMoveTable (event){
+// newX = startX - event.clientX;
+// newY = startY - event.clientY;
+
+// startX = event.clientX;
+// startY = event.clientY;
+
+// event.target.style.top = (event.target.offsetTop - newY) + "px";
+// event.target.style.left = (event.target.offsetLeft - newX) + "px";
+// }
+
+// function handleMouseUpTable(event){
+// document.removeEventListener("mousemove", handleMouseMoveTable)
+// }
+// initaliserBougerLesTables()

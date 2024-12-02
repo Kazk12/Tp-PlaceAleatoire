@@ -306,11 +306,43 @@ h2 {
 
 
 
-.Table{
-    border: 3px solid black;
-    /* width: 100px; */
-    height: 50px;
-}
+#Tables {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: flex-start;
+  }
+  
+  .Table {
+    width: 100px;
+    height: 60px;
+    background-color: #f0f0f0;
+    border: 2px solid #ddd;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .Table:nth-child(1),
+  .Table:nth-child(2),
+  .Table:nth-child(3) {
+    margin-right: 10px; /* Pour donner un espacement entre les trois premières */
+  }
+  
+  #Tables .row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 10px; /* Espacement entre les éléments */
+  }
+  
+  .center {
+    text-align: center;
+  }
+  
+
+
 
 
 .cent {
@@ -324,11 +356,13 @@ h2 {
 
 .textCentre{
     text-align: center;
+    font-size: 1.2rem;
 }
 
 
 .trois {
-    width: 12%;
+    width: 100px;
+   
 }
 
 .RetourLigne {
