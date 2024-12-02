@@ -200,13 +200,56 @@ function TableauRandom(Tableau){
 
 
 
+// On crée la fonction qui permet de faire le drag and drop
 function initaliserBougerLesTables() {
-  const chaqueTable = document.querySelectorAll(".ChaqueTable");
+  document.addEventListener ("mousedown", handleMouseDownTable);
+} 
 
-  // Ajoute un événement de "mousedown" sur chaque table
-  chaqueTable.forEach((table) => {
-    table.addEventListener("mousedown", handleMouseDownTable);
-  });
+
+
+
+function handleMouseDownTable(event){
+
+  // StartX prend la position d'ou ce trouve la souris sur l'axe X
+startX = event.clientX;
+
+  // StartY prend la position d'ou ce trouve la souris sur l'axe Y
+
+startY = event.clientY;
+
+document.addEventListener("mousemove", handleMouseMoveTable);
+
+
+// TableQuiBouge prend par exemple ici la table qu'on veut bouger(comme son nom quoi)
+TableQuiBouge = event.target
+
+document.addEventListener("mouseup", handleMouseUpTable);
 }
+
+function handleMouseMoveTable (event){
+
+// newX et newY prennent les anciennes valeurs de l'event.clientX/Y et les soustraits par la nouvelle valeur des event.clientX/Y
+newX = startX - event.clientX;
+newY = startY - event.clientY;
+
+
+// On donne les nouvelles valeurs pour startX et startY sinon on pourra pas faire bouger les tables car on modifie jamais leurs valeurs donc les 2 valeurs juste au dessus ne vont pas avoir le bon comportement
+startX = event.clientX;
+startY = event.clientY;
+
+
+// On ajoute le style qui permet de faire bouger les tables en fonction du décalage en rapport de la souris 
+TableQuiBouge.style.top = (TableQuiBouge.offsetTop - newY) + "px";
+TableQuiBouge.style.left = (TableQuiBouge.offsetLeft - newX) + "px";
+
+}
+
+
+// On crée la fonction qui permet de retirer les evenements 
+function handleMouseUpTable(){
+document.removeEventListener("mouseup", handleMouseUpTable)
+document.removeEventListener("mousemove", handleMouseMoveTable);
+}
+initaliserBougerLesTables()
 
 
