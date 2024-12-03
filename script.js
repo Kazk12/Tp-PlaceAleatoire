@@ -25,7 +25,7 @@ function handleKeyPressEnter(event){
 let apprenants = [];
 
 // Cette fonction permet d'ajouter un prénom dans le tableau apprenants
-function handleClickAjoutezApprenants(event) {
+function handleClickAjoutezApprenants() {
   const name = document.querySelector("#name");
   
   // Ajouter le prénom à la liste
